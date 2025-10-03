@@ -59,6 +59,11 @@ describe Board do
         return_value = basic_board.make_move(1, "X")
         expect(return_value).to be_nil
       end
+
+      it "returns the location of the move that was made" do
+        new_location = basic_board.make_move(0, "X")
+        expect(new_location).to eql([0, 0])
+      end
     end
   end
 
