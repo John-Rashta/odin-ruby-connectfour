@@ -73,7 +73,7 @@ describe Board do
         basic_board.make_move(1, "X")
         basic_board.clear_board
         expected_place = basic_board.instance_variable_get(:@my_board)[0][1]
-        expect(expected_place).to be_empty
+        expect(expected_place.strip).to be_empty
       end
     end
   end
@@ -83,12 +83,12 @@ describe Board do
       basic_board.make_move(1, "X")
       full_board = basic_board.board
       expect(full_board).to eq([
-                                 ["", "X", "", "", "", "", ""],
-                                 ["", "", "", "", "", "", ""],
-                                 ["", "", "", "", "", "", ""],
-                                 ["", "", "", "", "", "", ""],
-                                 ["", "", "", "", "", "", ""],
-                                 ["", "", "", "", "", "", ""]
+                                 [" ", "X", " ", " ", " ", " ", " "],
+                                 [" ", " ", " ", " ", " ", " ", " "],
+                                 [" ", " ", " ", " ", " ", " ", " "],
+                                 [" ", " ", " ", " ", " ", " ", " "],
+                                 [" ", " ", " ", " ", " ", " ", " "],
+                                 [" ", " ", " ", " ", " ", " ", " "]
                                ])
     end
   end

@@ -10,3 +10,9 @@
 # See https://docs.rubocop.org/rubocop/configuration
 
 inherit_from: ~/rubyrepos/.rubocop.yml
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/*'
+Layout/LineLength:
+  Exclude:
+    - 'spec/*'

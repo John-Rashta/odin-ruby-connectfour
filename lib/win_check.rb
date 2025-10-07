@@ -1,4 +1,16 @@
+# Module to check all possible wins
+# left_most and right_most will check the top location of both lines
+# check_diagonal will than run from those top location till them bottom
+# until it finds 4 of the same in a row or reaches the end
 module WinCheck
+  def check_win?(location, symbol, board)
+    return true if vertical_win?(location[1], symbol, board) ||
+                   horizontal_win?(location[0], symbol, board) ||
+                   diagonal_win?(location, symbol, board)
+
+    false
+  end
+
   def vertical_win?(column, symbol, board)
     streak = 0
     fake_board = board.board
